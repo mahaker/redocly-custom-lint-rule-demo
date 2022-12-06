@@ -4,8 +4,11 @@ apis:
     root: openapi/openapi.yaml
 extends:
   - recommended
+plugins:
+  - './plugins/custom-lint-rules.js'
 rules:
   no-unused-components: error
+  my-local-plugin/no-type-number: error
 features.openapi:
   htmlTemplate: ./docs/index.html
   theme:

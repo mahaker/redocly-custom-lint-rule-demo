@@ -1,3 +1,31 @@
+get:
+  tags:
+    - Echo
+  summary: Include parameter example
+  operationId: getById
+  security:
+    - api_key: []
+    - basic_auth: []
+  parameters:
+    - in: query
+      name: id
+      required: true
+      schema:
+        type: number
+      description: ID
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: string
+          examples:
+            response:
+              value: Hello world!
+    '400': 
+      description: Unauthorized
+
 post:
   tags:
     - Echo
